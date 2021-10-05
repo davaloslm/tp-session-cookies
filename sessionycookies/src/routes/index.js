@@ -1,9 +1,10 @@
-var express = require('express');
-var { index } = require("../controllers/indexController")
-var router = express.Router();
+const express = require('express');
+const { index } = require("../controllers/indexController");
+const validateIndexForm = require('../middlewares/IndexFormValidator');
+const router = express.Router();
 
 
 /* GET home page. */
-router.get('/', index);
+router.get('/', validateIndexForm, index);
 
 module.exports = router;

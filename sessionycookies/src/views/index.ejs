@@ -11,7 +11,8 @@
 
   </header>
   <main>
-    <form action="" method="">
+    <% if(nuevoUsuario === undefined) {%>
+       <form action="/" method="POST">
 
       <label for="nombre">Ingrese su nombre</label>
       <input type="text" id="nombre" name="nombre" required>
@@ -49,7 +50,21 @@
 
 
     </form>
+    
+    
+    
 
+      
+      <% }else{%>
+        <p>
+          Hola <%= nuevoUsuario.nombre %>  , elegiste el color: <%= nuevoUsuario.color %> , tu email es:
+          <%= nuevoUsuario.email %> y tu edad es: <%= nuevoUsuario.edad %>
+        </p>
+
+      
+    
+    
+    <% } %> 
   </main>
   <footer>
 

@@ -14,6 +14,8 @@ const controller = {
             let nuevoUsuario = req.body;
 
             req.session.backgroundColor= nuevoUsuario.color;
+            req.session.userName= nuevoUsuario.nombre;
+            
             res.locals.backgroundColor= nuevoUsuario.color;
 
             res.render("index", {nuevoUsuario})
@@ -26,6 +28,10 @@ const controller = {
         
 
         
+    },
+    user: (req, res)=>{
+        res.locals.backgroundColor= req.session.backgroundColor
+        res.render("user", {userName : req.session.userName})
     }
        
 }

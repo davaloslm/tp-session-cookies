@@ -15,8 +15,14 @@ const controller = {
 
             req.session.backgroundColor= nuevoUsuario.color;
             req.session.userName= nuevoUsuario.nombre;
-            
+
+
+
             res.locals.backgroundColor= nuevoUsuario.color;
+
+            if (req.body.recordarColor != undefined) {
+                res.cookie("recordarColor", nuevoUsuario.color, {maxAge: 60*1000})
+            }
 
             res.render("index", {nuevoUsuario})
             

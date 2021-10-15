@@ -38,6 +38,10 @@ const controller = {
     user: (req, res)=>{
         res.locals.backgroundColor= req.session.backgroundColor
         res.render("user", {userName : req.session.userName})
+    },
+    destroyCookie: (req, res)=>{
+        req.session.destroy();
+        res.cookie("recordarColor", null, {maxAge: -1})
     }
        
 }

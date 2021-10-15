@@ -1,7 +1,7 @@
 const { check } = require("express-validator");
 
 let validateIndexForm = [
-    check("name")
+    check("nombre")
     .notEmpty().withMessage("Debes ingresar tu nombre").bail()
     .isLength({min: 4, max:30}).withMessage("El nombre debe tener entre 4 y 30 caracteres"),
 

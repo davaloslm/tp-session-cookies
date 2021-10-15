@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 </head>
-<body>
+<body style="background-color: <%= backgroundColor ? backgroundColor : null %>;">
   <header>
 
   </header>
@@ -24,24 +24,24 @@
           <input type="text" id="nombre" name="nombre" >
     
           <br>
-          <small style="color:red"><%= locals.errors && errors.name ? errors.name.msg : null %> </small>
+          <small ><%= locals.errors && errors.name ? errors.name.msg : null %> </small>
           <br>
     
           <label for="color">Elija un color</label>
           <select name="color" id="color" >
     
             <option value="" selected hidden>Color</option>
-            <option value="rojo">Rojo</option>
-            <option value="azul">Azul</option>
-            <option value="verde">Verde</option>
-            <option value="amarillo">Amarillo</option>
-            <option value="gris">Gris</option>
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+            <option value="gray">Gris</option>
     
     
           </select>
 
           <br>
-          <small style="color:red"><%= locals.errors && errors.color ? errors.color.msg : null %> </small>
+          <small ><%= locals.errors && errors.color ? errors.color.msg : null %> </small>
           <br>
     
           
@@ -50,14 +50,14 @@
           <input type="email" id="email" name="email" >
 
           <br>
-          <small style="color:red"><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
+          <small ><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
           <br>
     
           <label for="edad">Ingrese su edad</label>
           <input type="number" id="edad" name="edad" >
 
           <br>
-          <small style="color:red"><%= locals.errors && errors.edad ? errors.edad.msg : null %> </small>
+          <small ><%= locals.errors && errors.edad ? errors.edad.msg : null %> </small>
           <br>
     
           <button type="submit">Enviar</button>

@@ -19,6 +19,7 @@ const controller = {
             res.render("index", {nuevoUsuario})
             
         }else{
+            
             res.render("index", {errors: errors.mapped(), old: req.body})
 
         }

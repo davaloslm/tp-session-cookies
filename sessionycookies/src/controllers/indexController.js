@@ -9,16 +9,22 @@ const controller = {
     },
     processForm: (req, res)=>{
         let errors = validationResult(req);
+
         if (errors.isEmpty()) {
+            let nuevoUsuario = req.body;
+
+            req.session.backgroundColor= nuevoUsuario.color;
+            res.locals.backgroundColor= nuevoUsuario.color;
+
+            res.render("index", {nuevoUsuario})
             
+        }else{
+            res.render("index", {errors: errors.mapped(), old: req.body})
+
         }
         
-        let nuevoUsuario = req.body;
 
-        usuarios.push(nuevoUsuario);
-
-        fs.writeFileSync(usuariosRuta, JSON.stringify(usuarios, null ,2))
-		res.redirect("/", {nuevoUsuario})
+        
     }
        
 }
